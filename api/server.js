@@ -5,6 +5,10 @@ function sayHello() {
   return "Hello from Server!";
 }
 
+app.get("/", (req, res) => {
+  res.json({ message: "API is running. Try GET /hello" });
+});
+
 app.get("/hello", (req, res) => {
   const result = sayHello();
   res.json({ message: result });
